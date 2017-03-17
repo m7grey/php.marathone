@@ -1,4 +1,5 @@
 <?php
+
 if (count($_POST) > 0) {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
