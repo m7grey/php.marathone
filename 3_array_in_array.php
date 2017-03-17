@@ -7,11 +7,14 @@
     ];
 
 /* ul-li-ol-li */
-
+    echo '<ul>';
     foreach($capitals as $country => $towns){
+        echo '<li>';
         echo $country;
-
+        echo '<ol>';
         foreach ($towns as $town){
-            echo $town;
+            echo "<li>$town</li>";
         }
+        echo '</ol></li>';
     }
+    echo '</ul>';
