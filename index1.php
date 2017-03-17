@@ -2,8 +2,9 @@
 if (count($_POST) > 0) {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
-    $dt = date("Y-m-d H:i:s;");
-    file_put_contents('apps.txt', "$name $phone\n", FILE_APPEND);
+    $dt = date("Y-m-d H:i:s");
+
+    file_put_contents('apps.txt', "$dt $name $phone\n", FILE_APPEND);
 
     echo 'Your request accepted, please wait for our call!';
 }
