@@ -1,7 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: serhiyyarosh
- * Date: 3/17/17
- * Time: 10:45 AM
- */
+
+    $capitals = [
+        'Russia' => ['Moscow', 'Saint-Petersburg','Novosibirks'],
+        'France' => ['Paris', 'Lion', 'Marcel', 'Nice'],
+        'England' => ['London', 'Liverpool', 'Birmingham']
+    ];
+
+/* ul-li-ol-li */
+
+    foreach($capitals as $country => $towns){
+        echo $country;
+
+    }
