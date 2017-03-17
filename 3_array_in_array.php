@@ -11,4 +11,7 @@
     foreach($capitals as $country => $towns){
         echo $country;
 
+        foreach ($towns as $town){
+            echo $town;
+        }
     }
