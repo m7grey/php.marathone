@@ -18,3 +18,21 @@
         echo '</ol></li>';
     }
     echo '</ul>';
+?>
+
+
+
+
+
+
+<ul>
+    <? foreach($capitals as $country => $towns): ?>
+        <li> <?=$country?>
+            <ol>
+            <? foreach ($towns as $town): ?>
+                <li><a href=""><?=$town?></a></li>
+            <? endforeach; ?>
+            </ol>
+        </li>
+    <? endforeach; ?>
+</ul>
