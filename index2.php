@@ -13,8 +13,8 @@ if (count($_POST) > 0) {
     } elseif (!is_numeric($phone)) {
         $msg = 'please, put only digit into phone field';
     } else {
-        mail("123@example.com","My subject","Line 1\nLine 2,\nLine 3");
-        file_put_contents('apps.txt', "$dt $name $phone\n", FILE_APPEND);
+//
+        file_put_contents('apps.txt', "$dt-|-$name-|-$phone\n", FILE_APPEND);
         $msg = 'Your request accepted, please wait for our call!';
     }
 } else {
