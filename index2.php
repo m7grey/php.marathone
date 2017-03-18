@@ -1,9 +1,9 @@
 <?php
-var_dump($_POST);
+//var_dump($_POST);
 
 if (count($_POST) > 0) {
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
+    $name = trim($_POST['name']);
+    $phone = trim($_POST['phone']);
     $dt = date("Y-m-d H:i:s");
 
     if (strlen($name) < 2) {
@@ -12,11 +12,13 @@ if (count($_POST) > 0) {
         $msg = 'Phone number should be 10 digit';
     } elseif (!is_numeric($phone)) {
         $msg = 'please, put only digit into phone field';
-    }else {
+    } else {
         file_put_contents('apps.txt', "$dt $name $phone\n", FILE_APPEND);
         $msg = 'Your request accepted, please wait for our call!';
     }
 } else {
+    $name = '';
+    $phone = '';
     $msg = 'Hello, Fill up empty fields and click Send!';
 }
 
@@ -24,9 +26,9 @@ if (count($_POST) > 0) {
 
 <form method="post">
     Name<br>
-    <input type="text" name="name" required><br>
+    <input type="text" name="name" value="" <?$name;?>required><br>
     Mobile<br>
-    <input type="text" name="phone"><br>
+    <input type="text" name="phone" value="" <?$phone;?><br>
     <input type="submit" value="Send">
 </form>
 <?php
