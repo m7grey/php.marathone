@@ -1,17 +1,22 @@
 <?php
+var_dump($_POST);
 
-    if (count($_POST) > 0) {
-        $name = $_POST['name'];
-        $phone = $_POST['phone'];
-        $dt = date("Y-m-d H:i:s");
+if (count($_POST) > 0) {
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $dt = date("Y-m-d H:i:s");
 
+    if (strlen($name) < 2) {
+        $msg = 'You should have name longer 2 symbols';
+    } elseif (!is_numeric($phone)) {
+        $msg = 'please, put only digit into phone field';
+    } else {
         file_put_contents('apps.txt', "$dt $name $phone\n", FILE_APPEND);
-
         $msg = 'Your request accepted, please wait for our call!';
     }
-    else{
-        $msg = 'Hello, Fill up empty fields and click Send!';
-    }
+} else {
+    $msg = 'Hello, Fill up empty fields and click Send!';
+}
 
 ?>
 
