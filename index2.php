@@ -8,9 +8,11 @@ if (count($_POST) > 0) {
 
     if (strlen($name) < 2) {
         $msg = 'You should have name longer 2 symbols';
+    } elseif (strlen($phone) < 10) {
+        $msg = 'Phone number should be 10 digit';
     } elseif (!is_numeric($phone)) {
         $msg = 'please, put only digit into phone field';
-    } else {
+    }else {
         file_put_contents('apps.txt', "$dt $name $phone\n", FILE_APPEND);
         $msg = 'Your request accepted, please wait for our call!';
     }
